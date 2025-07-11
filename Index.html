@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2026 Mega Auction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="LOGO/IPL Logo.jpeg" alt="IPL Logo" class="h-10">
+                        <span class="ml-2 text-xl font-bold hidden sm:inline">IPL 2026 Mega Auction</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:space-x-8">
+                    <a href="#" class="nav-link text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" data-page="home">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                    <a href="#" class="nav-link text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium" data-page="players">
+                        <i class="fas fa-users mr-2"></i> Players
+                    </a>
+                    <a href="#" class="nav-link text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium" data-page="teams">
+                        <i class="fas fa-tshirt mr-2"></i> Teams
+                    </a>
+                    <a href="#" class="nav-link text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium" data-page="auction">
+                        <i class="fas fa-gavel mr-2"></i> Live Auction
+                    </a>
+                    <a href="#" class="nav-link text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 text-sm font-medium" data-page="stats">
+                        <i class="fas fa-chart-bar mr-2"></i> Stats
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <button id="loginBtn" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                            <i class="fas fa-user mr-2"></i> Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white mobile-nav z-10">
+        <div class="flex justify-around">
+            <a href="#" class="nav-link p-3 text-center text-xs font-medium text-gray-500 hover:text-gray-700 flex flex-col items-center" data-page="home">
+                <i class="fas fa-home block text-lg mb-1"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-link p-3 text-center text-xs font-medium text-gray-500 hover:text-gray-700 flex flex-col items-center" data-page="players">
+                <i class="fas fa-users block text-lg mb-1"></i>
+                <span>Players</span>
+            </a>
+            <a href="#" class="nav-link p-3 text-center text-xs font-medium text-gray-500 hover:text-gray-700 flex flex-col items-center" data-page="teams">
+                <i class="fas fa-tshirt block text-lg mb-1"></i>
+                <span>Teams</span>
+            </a>
+            <a href="#" class="nav-link p-3 text-center text-xs font-medium text-gray-500 hover:text-gray-700 flex flex-col items-center" data-page="auction">
+                <i class="fas fa-gavel block text-lg mb-1"></i>
+                <span>Auction</span>
+            </a>
+            <a href="#" class="nav-link p-3 text-center text-xs font-medium text-gray-500 hover:text-gray-700 flex flex-col items-center" data-page="stats">
+                <i class="fas fa-chart-bar block text-lg mb-1"></i>
+                <span>Stats</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Container -->
+    <div class="container mx-auto px-4 pb-20 md:pb-8">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <!-- Hero Section -->
+            <div class="bg-gradient-to-r from-purple-700 to-pink-600 text-white rounded-xl shadow-lg overflow-hidden mt-6">
+                <div class="p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0">
+                            <h1 class="text-3xl md:text-4xl font-bold mb-4">IPL 2026 Mega Auction</h1>
+                            <p class="text-lg mb-6">The biggest cricket auction in history with 12 teams and ₹120 crore budgets!</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-white text-purple-700 px-3 py-1 rounded-full text-xs font-bold">
+                                    <i class="fas fa-calendar-alt mr-1"></i> Dec 18-19, 2025
+                                </span>
+                                <span class="bg-white text-purple-700 px-3 py-1 rounded-full text-xs font-bold">
+                                    <i class="fas fa-map-marker-alt mr-1"></i> Bengaluru
+                                </span>
+                                <span class="bg-white text-purple-700 px-3 py-1 rounded-full text-xs font-bold">
+                                    <i class="fas fa-rupee-sign mr-1"></i> ₹120 Cr Budgets
+                                </span>
+                                <span class="bg-white text-purple-700 px-3 py-1 rounded-full text-xs font-bold">
+                                    <i class="fas fa-plus-circle mr-1"></i> 2 New Teams
+                                </span>
+                            </div>
+                            <button class="bg-white text-purple-700 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition">
+                                <i class="fas fa-play mr-2"></i> Watch Live
+                            </button>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center">
+                            <img src="Auction Photo/auction.jpg" alt="Auction" class="h-70 md:h-100 object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marquee Players -->
+            <div class="mt-12">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-star mr-3 text-yellow-500"></i> Marquee Players
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Player 1 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 batsman">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-xl">Virat Kohli</h3>
+                                <p class="text-sm text-gray-600">Batsman | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                9.7
+                            </span>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="Auction Photo/virat kohli.jpeg" alt="Virat Kohli" class="w-16 h-16 rounded-full border-2 border-yellow-500 object-cover mr-4 player-image">
+                            <div>
+                                <p class="text-sm text-gray-600">Base Price:</p>
+                                <p class="font-bold text-lg">₹2.00 Cr</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-trophy mr-1 text-yellow-500"></i> MVP 2025
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm">
+                                Track Player
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Player 2 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 all-rounder">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-xl">Hardik Pandya</h3>
+                                <p class="text-sm text-gray-600">All-Rounder | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                9.2
+                            </span>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="Auction Photo/hardik pandya.jpeg" 
+                                 alt="Hardik Pandya" class="w-16 h-16 rounded-full border-2 border-green-500 object-cover mr-4 player-image"> <div> <p class="text-sm text-gray-600">Base Price:</p> <p class="font-bold text-lg">₹1.50 Cr</p> </div> </div> <div class="mt-4 flex justify-between items-center"> <span class="text-xs bg-gray-100 px-2 py-1 rounded-full"> <i class="fas fa-trophy mr-1 text-yellow-500"></i> Champion 2022 </span> <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm"> Track Player </button> </div> </div>
+                <!-- Player 3 -->
+                <div class="player-card bg-white rounded-lg shadow p-4 bowler">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-xl">Jasprit Bumrah</h3>
+                            <p class="text-sm text-gray-600">Bowler | India</p>
+                        </div>
+                        <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                            9.5
+                        </span>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="Auction Photo/jasprit Bhumra.jpeg" 
+                             alt="Jasprit Bumrah" class="w-16 h-16 rounded-full border-2 border-blue-500 object-cover mr-4 player-image">
+                        <div>
+                            <p class="text-sm text-gray-600">Base Price:</p>
+                            <p class="font-bold text-lg">₹1.75 Cr</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                            <i class="fas fa-bolt mr-1 text-blue-500"></i> 145 Wickets
+                        </span>
+                        <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm">
+                            Track Player
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Player 4 -->
+                <div class="player-card bg-white rounded-lg shadow p-4 wicket-keeper">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-xl">Rishabh Pant</h3>
+                            <p class="text-sm text-gray-600">Wicket-Keeper | India</p>
+                        </div>
+                        <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                            9.0
+                        </span>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="Auction Photo/Rishabh Pant.jpeg" 
+                             alt="Rishabh Pant" class="w-16 h-16 rounded-full border-2 border-yellow-500 object-cover mr-4 player-image">
+                        <div>
+                            <p class="text-sm text-gray-600">Base Price:</p>
+                            <p class="font-bold text-lg">₹1.80 Cr</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                            <i class="fas fa-fire mr-1 text-red-500"></i> Strike Rate 150+
+                        </span>
+                        <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm">
+                            Track Player
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Auctions -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-calendar-day mr-3 text-purple-600"></i> Upcoming Auctions
+            </h2>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <!-- Day 1 -->
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 text-purple-800 rounded-lg p-3 mr-4">
+                                <i class="fas fa-calendar-day text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Day 1 - December 18</h3>
+                                <p class="text-sm text-gray-600">10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-500 mr-2"></i>
+                                <span>Indian Batters (Set 1-5)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-500 mr-2"></i>
+                                <span>Overseas All-Rounders</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-500 mr-2"></i>
+                                <span>Wicket-Keepers</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Day 2 -->
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 text-purple-800 rounded-lg p-3 mr-4">
+                                <i class="fas fa-calendar-day text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Day 2 - December 19</h3>
+                                <p class="text-sm text-gray-600">10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-500 mr-2"></i>
+                                <span>Indian Bowlers</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-500 mr-2"></i>
+                                <span>Overseas Batters</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-purple-500 mr-2"></i>
+                                <span>Uncapped Players</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Accelerated -->
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 text-purple-800 rounded-lg p-3 mr-4">
+                                <i class="fas fa-bolt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Accelerated Auction</h3>
+                                <p class="text-sm text-gray-600">December 19, 6:30 PM</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            Fast-paced bidding for remaining players after main auction concludes.
+                            Teams can nominate players they want to bid for.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Teams Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-plus-circle mr-3 text-green-500"></i> New Teams for 2026
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Indore Heros -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="team-detail-header bg-gradient-to-r from-blue-800 to-blue-600 text-white p-6">
+                        <div class="flex items-center">
+                            <div class="bg-white square-full p-0 mr-4 ">
+                                <img src="logo/Indore logo.png" alt="IH Logo" class="w-12 h-12">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl">Indore Heroes</h3>
+                                <p class="text-sm opacity-90">Owned by Adani Group</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <p class="text-sm text-gray-600">Remaining Purse</p>
+                                <p class="font-bold text-xl">₹120.0 Cr</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600">Slots Available</p>
+                                <p class="font-bold text-xl">25</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600">Home Ground:</p>
+                            <p class="font-bold">Holker Stadium</p>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-bold">
+                            View Team Strategy
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Kochi Lions -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="team-detail-header bg-gradient-to-r from-red-700 to-red-600 text-white p-6">
+                        <div class="flex items-center">
+                            <div class="bg-white rounded-full p-0 mr-4">
+                                <img src="LOGO/PL Logo.PNG" alt="PL Logo" class="w-12 h-12">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl">Patna Lions</h3>
+                                <p class="text-sm opacity-90">Owned by Muthoot Group</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <p class="text-sm text-gray-600">Remaining Purse</p>
+                                <p class="font-bold text-xl">₹120.0 Cr</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600">Slots Available</p>
+                                <p class="font-bold text-xl">25</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600">Home Ground:</p>
+                            <p class="font-bold">Rajgir International Cricket Stadium</p>
+                        </div>
+                        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-bold">
+                            View Team Strategy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Players Page -->
+    <div id="players" class="page">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <h2 class="text-2xl font-bold mb-4 md:mb-0">
+                <i class="fas fa-users mr-2"></i> Player Pool (524)
+            </h2>
+            <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+                <div class="relative w-full md:w-64">
+                    <input type="text" placeholder="Search players..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                <select class="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <option>All Categories</option>
+                    <option>Batsmen</option>
+                    <option>Bowlers</option>
+                    <option>All-Rounders</option>
+                    <option>Wicket-Keepers</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Filter Chips -->
+        <div class="flex flex-wrap gap-2 mb-6">
+            <button class="filter-chip active bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                All Players
+            </button>
+            <button class="filter-chip bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                Indian
+            </button>
+            <button class="filter-chip bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                Overseas
+            </button>
+            <button class="filter-chip bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                Uncapped
+            </button>
+            <button class="filter-chip bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                U-19
+            </button>
+            <button class="filter-chip bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                Retained
+            </button>
+        </div>
+        
+        <!-- Player Pool Grid -->
+        <div class="player-pool-grid">
+            <!-- Player Card 1 -->
+            <div class="player-card bg-white rounded-lg shadow p-4 batsman">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-bold text-lg">Virat Kohli</h3>
+                        <p class="text-xs text-gray-600">Batsman | India</p>
+                    </div>
+                    <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                        9.7
+                    </span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <img src="Auction Photo/virat kohli.jpeg" 
+                         alt="Virat Kohli" class="w-12 h-12 rounded-full border-2 border-yellow-500 object-cover mr-3 player-image">
+                    <div>
+                        <p class="text-xs text-gray-600">Base Price</p>
+                        <p class="font-bold">₹2.00 Cr</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                        <i class="fas fa-trophy mr-1 text-yellow-500"></i> MVP 2016
+                    </span>
+                    <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Player Card 2 -->
+            <div class="player-card bg-white rounded-lg shadow p-4 all-rounder">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-bold text-lg">Hardik Pandya</h3>
+                        <p class="text-xs text-gray-600">All-Rounder | India</p>
+                    </div>
+                    <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                        9.2
+                    </span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <img src="Auction Photo/hardik pandya.jpeg" 
+                         alt="Hardik Pandya" class="w-12 h-12 rounded-full border-2 border-green-500 object-cover mr-3 player-image">
+                    <div>
+                        <p class="text-xs text-gray-600">Base Price</p>
+                        <p class="font-bold">₹1.50 Cr</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                        <i class="fas fa-trophy mr-1 text-yellow-500"></i> Champion 2022
+                    </span>
+                    <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Player Card 3 -->
+            <div class="player-card bg-white rounded-lg shadow p-4 bowler">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-bold text-lg">Jasprit Bumrah</h3>
+                        <p class="text-xs text-gray-600">Bowler | India</p>
+                    </div>
+                    <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                        9.5
+                    </span>
+                </div>
+                <div class="flex items-center mb-3">
+                                                <img src="Auction Photo/jasprit Bhumra.jpeg" 
+                                 alt="Jasprit Bumrah" class="w-12 h-12 rounded-full border-2 border-blue-500 object-cover mr-3 player-image">
+                            <div>
+                                <p class="text-xs text-gray-600">Base Price</p>
+                                <p class="font-bold">₹1.75 Cr</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-bolt mr-1 text-blue-500"></i> 145 Wickets
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 4 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 wicket-keeper">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-lg">Rishabh Pant</h3>
+                                <p class="text-xs text-gray-600">Wicket-Keeper | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                9.0
+                            </span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <img src="Auction Photo/Rishabh Pant.jpeg" 
+                                 alt="Rishabh Pant" class="w-12 h-12 rounded-full border-2 border-yellow-500 object-cover mr-3 player-image">
+                            <div>
+                                <p class="text-xs text-gray-600">Base Price</p>
+                                <p class="font-bold">₹1.80 Cr</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-fire mr-1 text-red-500"></i> Strike Rate 150+
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 5 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 batsman">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-lg">Rohit Sharma</h3>
+                                <p class="text-xs text-gray-600">Batsman | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                9.3
+                            </span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <img src="Auction Photo/rohit sharma.jpeg" 
+                                 alt="Rohit Sharma" class="w-12 h-12 rounded-full border-2 border-red-500 object-cover mr-3 player-image">
+                            <div>
+                                <p class="text-xs text-gray-600">Base Price</p>
+                                <p class="font-bold">₹1.50 Cr</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-trophy mr-1 text-yellow-500"></i> 5× Champion
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 6 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 all-rounder">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-lg">Ravindra Jadeja</h3>
+                                <p class="text-xs text-gray-600">All-Rounder | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                9.1
+                            </span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <img src="Auction Photo/ravindra jadeja.jpeg" 
+                                 alt="Ravindra Jadeja" class="w-12 h-12 rounded-full border-2 border-green-500 object-cover mr-3 player-image">
+                            <div>
+                                <p class="text-xs text-gray-600">Base Price</p>
+                                <p class="font-bold">₹1.25 Cr</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-star mr-1 text-green-500"></i> MVP 2023
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 7 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 bowler">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-lg">Mohammed Shami</h3>
+                                <p class="text-xs text-gray-600">Bowler | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                8.9
+                            </span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <img src="Auction Photo/md shami.jpeg" 
+                                 alt="Mohammed Shami" class="w-12 h-12 rounded-full border-2 border-blue-500 object-cover mr-3 player-image">
+                            <div>
+                                <p class="text-xs text-gray-600">Base Price</p>
+                                <p class="font-bold">₹1.00 Cr</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-bolt mr-1 text-blue-500"></i> 20 Wickets (2023)
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 8 -->
+                    <div class="player-card bg-white rounded-lg shadow p-4 batsman">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-lg">Suryakumar Yadav</h3>
+                                <p class="text-xs text-gray-600">Batsman | India</p>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                8.8
+                            </span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <img src="Auction Photo/Suryakumar.jpeg" 
+                                 alt="Suryakumar Yadav" class="w-12 h-12 rounded-full border-2 border-red-500 object-cover mr-3 player-image">
+                            <div>
+                                <p class="text-xs text-gray-600">Base Price</p>
+                                <p class="font-bold">₹1.20 Cr</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                                <i class="fas fa-fire mr-1 text-red-500"></i> 360° Player
+                            </span>
+                            <button class="bid-btn bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-xs">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="mt-8 flex justify-center">
+                    <nav class="inline-flex rounded-md shadow">
+                        <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-purple-600 font-medium">
+                            1
+                        </a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                            2
+                        </a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                            3
+                        </a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                            4
+                        </a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                            5
+                        </a>
+                        <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Teams Page -->
+            <div id="teams" class="page">
+                <h2 class="text-2xl font-bold mb-6">
+                    <i class="fas fa-tshirt mr-2"></i> Franchise Teams
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Mumbai Indians -->
+                    <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="team-detail-header team-bg-mi text-white p-6">
+                            <div class="flex items-center">
+                                <img src="LOGO/MI Logo.png" alt="MI Logo" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Mumbai Indians</h3>
+                                    <p class="text-sm opacity-90">Owned by Reliance Industries</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-600">Remaining Purse</p>
+                                    <p class="font-bold text-xl">₹38.2 Cr</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600">Slots Available</p>
+                                    <p class="font-bold text-xl">5</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600">Home Ground:</p>
+                                <p class="font-bold">Wankhede Stadium, Mumbai</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-users mr-1"></i> Squad
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-chart-line mr-1"></i> Strategy
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-history mr-1"></i> History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chennai Super Kings -->
+                    <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="team-detail-header team-bg-csk text-black p-6">
+                            <div class="flex items-center">
+                                <img src="LOGO/CSK logo.png" alt="CSK Logo" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Chennai Super Kings</h3>
+                                    <p class="text-sm opacity-90">Owned by India Cements</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-600">Remaining Purse</p>
+                                    <p class="font-bold text-xl">₹45.7 Cr</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600">Slots Available</p>
+                                    <p class="font-bold text-xl">7</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600">Home Ground:</p>
+                                <p class="font-bold">MA Chidambaram Stadium, Chennai</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-users mr-1"></i> Squad
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-chart-line mr-1"></i> Strategy
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-history mr-1"></i> History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Royal Challengers Bangalore -->
+                    <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="team-detail-header team-bg-rcb text-white p-6">
+                            <div class="flex items-center">
+                                <img src="LOGO/RCB logo.jpeg" alt="RCB Logo" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Royal Challengers</h3>
+                                    <p class="text-sm opacity-90">Owned by United Spirits</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-600">Remaining Purse</p>
+                                    <p class="font-bold text-xl">₹42.0 Cr</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600">Slots Available</p>
+                                    <p class="font-bold text-xl">6</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600">Home Ground:</p>
+                                <p class="font-bold">M. Chinnaswamy Stadium, Bengaluru</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-users mr-1"></i> Squad
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-chart-line mr-1"></i> Strategy
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-history mr-1"></i> History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kolkata Knight Riders -->
+                    <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="team-detail-header team-bg-kkr text-white p-6">
+                            <div class="flex items-center">
+                                                                <img src="LOGO/KKR logo.jpeg" alt="KKR Logo" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Kolkata Knight Riders</h3>
+                                    <p class="text-sm opacity-90">Owned by Red Chillies</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-600">Remaining Purse</p>
+                                    <p class="font-bold text-xl">₹49.5 Cr</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600">Slots Available</p>
+                                    <p class="font-bold text-xl">3</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600">Home Ground:</p>
+                                <p class="font-bold">Eden Gardens, Kolkata</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-users mr-1"></i> Squad
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-chart-line mr-1"></i> Strategy
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-history mr-1"></i> History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Delhi Capitals -->
+                    <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="team-detail-header team-bg-dc text-white p-6">
+                            <div class="flex items-center">
+                                <img src="LOGO/DC logo.png" alt="DC Logo" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Delhi Capitals</h3>
+                                    <p class="text-sm opacity-90">Owned by GMR Group</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-600">Remaining Purse</p>
+                                    <p class="font-bold text-xl">₹32.8 Cr</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600">Slots Available</p>
+                                    <p class="font-bold text-xl">7</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600">Home Ground:</p>
+                                <p class="font-bold">Arun Jaitley Stadium, Delhi</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-users mr-1"></i> Squad
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-chart-line mr-1"></i> Strategy
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-history mr-1"></i> History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ahmedabad Heroes -->
+                    <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="team-detail-header team-bg-ah text-white p-6">
+                            <div class="flex items-center">
+                                <img src="LOGO/GT Logo.png" alt="GT Logo" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Gujrat Titans</h3>
+                                    <p class="text-sm opacity-90">Owned by Adani Group</p>
+                                </div>
+                                <span class="ml-auto bg-white text-blue-800 text-xs px-2 py-1 rounded-full font-bold new-team-badge">
+                                    NEW
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <p class="text-sm text-gray-600">Remaining Purse</p>
+                                    <p class="font-bold text-xl">₹120.0 Cr</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600">Slots Available</p>
+                                    <p class="font-bold text-xl">25</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600">Home Ground:</p>
+                                <p class="font-bold">Narendra Modi Stadium,Ahmedabad</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <button class="bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-users mr-1"></i> Squad
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-chart-line mr-1"></i> Strategy
+                                </button>
+                                <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold">
+                                    <i class="fas fa-history mr-1"></i> History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Auction Page -->
+            <div id="auction" class="page">
+                <!-- Auction Status Header -->
+                <div class="bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                            <div class="mb-4 md:mb-0">
+                                <h2 class="text-2xl font-bold flex items-center">
+                                    <i class="fas fa-gavel mr-3 hammer-animation"></i> Live Auction
+                                </h2>
+                                <p class="text-sm opacity-90 mt-1">Day 1 - Indian Batters (Set 1)</p>
+                            </div>
+                            <div class="flex items-center space-x-6">
+                                <div class="text-center">
+                                    <p class="text-sm opacity-90">Time Remaining</p>
+                                    <p class="text-2xl font-bold timer-flash" id="auctionTimer">00:00:00</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm opacity-90">Player Timer</p>
+                                    <p class="text-2xl font-bold" id="playerTimer">00:30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left Column - Current Bid -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <!-- Current Player Bidding -->
+                            <div class="bg-gray-100 p-4 border-b border-gray-200">
+                                <h3 class="font-bold text-lg flex items-center">
+                                    <i class="fas fa-user-circle mr-2"></i> Currently Bidding On
+                                </h3>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-col md:flex-row items-center">
+                                    <div class="mb-4 md:mb-0 md:mr-6 relative">
+                                        <img src="Auction Photo/virat kohli.jpeg" 
+                                             alt="Player" class="w-32 h-32 rounded-full border-4 border-yellow-500 object-cover player-image">
+                                        <div class="absolute bottom-0 right-0 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                                            <i class="fas fa-star"></i> 9.7
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex-1">
+                                        <h3 class="text-3xl font-bold">Virat Kohli</h3>
+                                        <div class="flex flex-wrap items-center text-sm text-gray-600 mt-2 gap-2">
+                                            <span class="flex items-center">
+                                                <i class="fas fa-user-tag mr-1 text-red-500"></i> Batsman
+                                            </span>
+                                            <span class="flex items-center">
+                                                <i class="fas fa-birthday-cake mr-1 text-blue-500"></i> 36 yrs
+                                            </span>
+                                            <span class="flex items-center">
+                                                <i class="fas fa-flag mr-1 text-green-500"></i> India
+                                            </span>
+                                            <span class="flex items-center">
+                                                <i class="fas fa-trophy mr-1 text-yellow-500"></i> MVP 2016
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="mt-4">
+                                            <div class="flex justify-between items-center">
+                                                <div>
+                                                    <p class="text-sm text-gray-600">Base Price</p>
+                                                    <p class="font-bold text-xl">₹2.00 Cr</p>
+                                                </div>
+                                                <div class="text-right">
+                                                    <p class="text-sm text-gray-600">Current Bid</p>
+                                                    <p class="font-bold text-2xl text-red-600" id="currentBid">₹12.75 Cr</p>
+                                                </div>
+                                            </div>
+                                            <div class="mt-2 bg-gray-200 rounded-full h-2">
+                                                <div class="bg-red-500 h-2 rounded-full progress-bar" style="width: 87%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bidding Controls -->
+                                <div class="mt-8">
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div class="bg-gray-100 rounded-lg p-4">
+                                            <p class="text-sm text-gray-600 mb-1">Leading Bid By</p>
+                                            <div class="flex items-center">
+                                                <img src="LOGO/RCB logo.jpeg" 
+                                                     alt="RCB" class="w-8 h-8 mr-2">
+                                                <span class="font-bold">Royal Challengers</span>
+                                            </div>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4">
+                                            <p class="text-sm text-gray-600 mb-1">Bid Increment</p>
+                                            <p class="font-bold">₹0.25 Cr</p>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4">
+                                            <p class="text-sm text-gray-600 mb-1">Bids Received</p>
+                                            <p class="font-bold">9</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <button class="bid-btn bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold text-lg flex items-center justify-center">
+                                            <i class="fas fa-arrow-up mr-2"></i> Raise Bid (+₹0.25 Cr)
+                                        </button>
+                                        <button class="bid-btn bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold text-lg flex items-center justify-center">
+                                            <i class="fas fa-times mr-2"></i> Pass
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bid History -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden mt-6">
+                            <div class="bg-gray-100 p-4 border-b border-gray-200">
+                                <h3 class="font-bold text-lg flex items-center">
+                                    <i class="fas fa-history mr-2"></i> Bid History
+                                </h3>
+                            </div>
+                            <div class="p-4">
+                                <div class="space-y-3 scrollable-section" style="max-height: 300px;">
+                                    <!-- Bid Entry 1 -->
+                                    <div class="bid-history-item bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <img src="LOGO/CSK logo.png" 
+                                                     alt="CSK" class="w-6 h-6 mr-2">
+                                                <span class="font-medium">Chennai Super Kings</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-bold text-red-600">₹12.75 Cr</p>
+                                                <p class="text-xs text-gray-500">3 seconds ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bid Entry 2 -->
+                                    <div class="bid-history-item bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <img src="LOGO/RCB logo.jpeg" 
+                                                     alt="RCB" class="w-6 h-6 mr-2">
+                                                <span class="font-medium">Royal Challengers</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-bold text-red-600">₹12.50 Cr</p>
+                                                <p class="text-xs text-gray-500">12 seconds ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bid Entry 3 -->
+                                    <div class="bid-history-item bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <img src="LOGO/MI Logo.png" 
+                                                     alt="MI" class="w-6 h-6 mr-2">
+                                                <span class="font-medium">Mumbai Indians</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-bold text-red-600">₹12.25 Cr</p>
+                                                <p class="text-xs text-gray-500">22 seconds ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bid Entry 4 -->
+                                    <div class="bid-history-item bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <img src="LOGO/KKR logo.jpeg" 
+                                                     alt="KKR" class="w-6 h-6 mr-2">
+                                                <span class="font-medium">Kolkata Knight Riders</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-bold text-red-600">₹12.00 Cr</p>
+                                                <p class="text-xs text-gray-500">35 seconds ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bid Entry 5 -->
+                                    <div class="bid-history-item bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <img src="LOGO/GT Logo.png" 
+                                                     alt="AH" class="w-6 h-6 mr-2">
+                                                <span class="font-medium">Gujrat Titans</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-bold text-red-600">₹11.75 Cr</p>
+                                                <p class="text-xs text-gray-500">48 seconds ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bid Entry 6 -->
+                                    <div class="bid-history-item bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <img src="LOGO/KKR logo.jpeg" 
+                                                     alt="KKR" class="w-6 h-6 mr-2">
+                                                <span class="font-medium">Kolkata Knight Riders</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-bold text-red-600">₹11.50 Cr</p>
+                                                <p class="text-xs text-gray-500">1 minute ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column - Next Players -->
+                    <div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="bg-gray-100 p-4 border-b border-gray-200">
+                                <h3 class="font-bold text-lg flex items-center">
+                                    <i class="fas fa-users mr-2"></i> Next Players
+                                </h3>
+                            </div>
+                                                         <div class="space-y-4 scrollable-section" style="max-height: 600px;">
+                                <!-- Next Player 1 -->
+                                <div class="bg-gray-50 p-4 rounded-lg hover:bg-purple-50 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <img src="Auction Photo/rohit sharma.jpeg" 
+                                             alt="Rohit Sharma" class="w-12 h-12 rounded-full border-2 border-purple-500 object-cover mr-3">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold">Rohit Sharma</h4>
+                                            <p class="text-xs text-gray-600">Batsman | India</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xs text-gray-600">Base Price</p>
+                                            <p class="font-bold">₹1.50 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Next Player 2 -->
+                                <div class="bg-gray-50 p-4 rounded-lg hover:bg-purple-50 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <img src="Auction Photo/Suryakumar.jpeg" 
+                                             alt="Suryakumar" class="w-12 h-12 rounded-full border-2 border-purple-500 object-cover mr-3">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold">Suryakumar Yadav</h4>
+                                            <p class="text-xs text-gray-600">Batsman | India</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xs text-gray-600">Base Price</p>
+                                            <p class="font-bold">₹1.20 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Next Player 3 -->
+                                <div class="bg-gray-50 p-4 rounded-lg hover:bg-purple-50 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <img src="Auction Photo/Rishabh Pant.jpeg" 
+                                             alt="Rishabh Pant" class="w-12 h-12 rounded-full border-2 border-purple-500 object-cover mr-3">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold">Rishabh Pant</h4>
+                                            <p class="text-xs text-gray-600">WK-Batsman | India</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xs text-gray-600">Base Price</p>
+                                            <p class="font-bold">₹1.80 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Next Player 4 -->
+                                <div class="bg-gray-50 p-4 rounded-lg hover:bg-purple-50 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <img src="Auction Photo/ravindra jadeja.jpeg" 
+                                             alt="Jadeja" class="w-12 h-12 rounded-full border-2 border-purple-500 object-cover mr-3">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold">Ravindra Jadeja</h4>
+                                            <p class="text-xs text-gray-600">All-Rounder | India</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xs text-gray-600">Base Price</p>
+                                            <p class="font-bold">₹1.25 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Next Player 5 -->
+                                <div class="bg-gray-50 p-4 rounded-lg hover:bg-purple-50 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <img src="Auction Photo/jasprit Bhumra.jpeg" 
+                                             alt="Bumrah" class="w-12 h-12 rounded-full border-2 border-purple-500 object-cover mr-3">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold">Jasprit Bumrah</h4>
+                                            <p class="text-xs text-gray-600">Bowler | India</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xs text-gray-600">Base Price</p>
+                                            <p class="font-bold">₹1.75 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Next Player 6 -->
+                                <div class="bg-gray-50 p-4 rounded-lg hover:bg-purple-50 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <img src="Auction Photo/hardik pandya.jpeg" 
+                                             alt="Hardik" class="w-12 h-12 rounded-full border-2 border-purple-500 object-cover mr-3">
+                                        <div class="flex-1">
+                                            <h4 class="font-bold">Hardik Pandya</h4>
+                                            <p class="text-xs text-gray-600">All-Rounder | India</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xs text-gray-600">Base Price</p>
+                                            <p class="font-bold">₹1.50 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Sales -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden mt-6">
+                            <div class="bg-gray-100 p-4 border-b border-gray-200">
+                                <h3 class="font-bold text-lg flex items-center">
+                                    <i class="fas fa-check-circle mr-2 text-green-500"></i> Recent Sales
+                                </h3>
+                            </div>
+                            <div class="p-4">
+                                <div class="space-y-3">
+                                    <!-- Sale 1 -->
+                                    <div class="flex justify-between items-center p-2 border-b border-gray-100">
+                                        <div class="flex items-center">
+                                            <img src="LOGO/KKR logo.jpeg" 
+                                                 alt="KKR" class="w-6 h-6 mr-2">
+                                            <span class="font-medium">Kolkata Knight Riders</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold">Venkatesh Iyer</p>
+                                            <p class="text-sm text-gray-600">₹23.75 Cr</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sale 2 -->
+                                    <div class="flex justify-between items-center p-2 border-b border-gray-100">
+                                        <div class="flex items-center">
+                                            <img src="LOGO/MI Logo.png" 
+                                                 alt="MI" class="w-6 h-6 mr-2">
+                                            <span class="font-medium">Mumbai Indians</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold">Trent Boult</p>
+                                            <p class="text-sm text-gray-600">₹12.50 Cr</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sale 3 -->
+                                    <div class="flex justify-between items-center p-2 border-b border-gray-100">
+                                        <div class="flex items-center">
+                                            <img src="LOGO/CSK logo.png" 
+                                                 alt="CSK" class="w-6 h-6 mr-2">
+                                            <span class="font-medium">Chennai Super Kings</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold">Ruturaj Gaikwad</p>
+                                            <p class="text-sm text-gray-600">₹18.00 Cr</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sale 4 -->
+                                    <div class="flex justify-between items-center p-2 border-b border-gray-100">
+                                        <div class="flex items-center">
+                                            <img src="LOGO/GT Logo.png" 
+                                                 alt="AH" class="w-6 h-6 mr-2">
+                                            <span class="font-medium">Gujrat Titans</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold">Rashid Khan</p>
+                                            <p class="text-sm text-gray-600">₹10.00 Cr</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sale 5 -->
+                                    <div class="flex justify-between items-center p-2">
+                                        <div class="flex items-center">
+                                            <img src="LOGO/RCB logo.jpeg" 
+                                                 alt="RCB" class="w-6 h-6 mr-2">
+                                            <span class="font-medium">Royal Challengers</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-bold">Josh Hazlewood</p>
+                                            <p class="text-sm text-gray-600">₹12.50 Cr</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Page -->
+            <div id="stats" class="page">
+                <h2 class="text-2xl font-bold mb-6">
+                    <i class="fas fa-chart-bar mr-2"></i> Auction Statistics
+                </h2>
+                
+                <!-- Stats Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Spending -->
+                    <div class="stats-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Total Spending</p>
+                                <p class="font-bold text-2xl">₹639.15 Cr</p>
+                            </div>
+                            <div class="bg-purple-100 text-purple-800 rounded-full p-3">
+                                <i class="fas fa-rupee-sign text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-purple-500 rounded-full" style="width: 82%"></div>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-2">82% of total purse utilized</p>
+                    </div>
+                    
+                    <!-- Players Sold -->
+                    <div class="stats-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Players Sold</p>
+                                <p class="font-bold text-2xl">182</p>
+                            </div>
+                            <div class="bg-green-100 text-green-800 rounded-full p-3">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-500 rounded-full" style="width: 42%"></div>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-2">42% of total pool sold</p>
+                    </div>
+                    
+                    <!-- Highest Bid -->
+                    <div class="stats-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Highest Bid</p>
+                                <p class="font-bold text-2xl">₹27.00 Cr</p>
+                            </div>
+                            <div class="bg-red-100 text-red-800 rounded-full p-3">
+                                <i class="fas fa-crown text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-sm">Rishabh Pant to LSG</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Most Active -->
+                    <div class="stats-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Most Active Team</p>
+                                <p class="font-bold text-2xl">Mumbai Indians</p>
+                            </div>
+                            <div class="bg-blue-100 text-blue-800 rounded-full p-3">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-sm">18 players bought</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Spending Breakdown -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="bg-gray-100 p-4 border-b border-gray-200">
+                        <h3 class="font-bold text-lg flex items-center">
+                            <i class="fas fa-money-bill-wave mr-2"></i> Team Spending
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <!-- Team 1 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="font-medium flex items-center">
+                                        <img src="LOGO/CSK logo.png" 
+                                             alt="RCB" class="w-4 h-4 mr-2"> Chennai Super Kings
+                                    </span>
+                                    <span class="font-bold">₹119.95 Cr (99.95%)</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-yellow-500 rounded-full" style="width: 99.95%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Team 2 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="font-medium flex items-center">
+                                        <img src="LOGO/DC logo.png" 
+                                             alt="PBKS" class="w-4 h-4 mr-2"> Delhi Capitals
+                                    </span>
+                                    <span class="font-bold">₹119.80 Cr (99.83%)</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-blue-400 rounded-full" style="width: 99.83%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Team 3 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="font-medium flex items-center">
+                                        <img src="LOGO/GT Logo.png" 
+                                             alt="GT" class="w-4 h-4 mr-2"> Gujrat Titans
+                                    </span>
+                                    <span class="font-bold">₹119.85 Cr (99.84%)</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-gray-500 rounded-full" style="width: 99.87%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Team 4 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="font-medium flex items-center">
+                                        <img src="LOGO/KKR logo.jpeg" 
+                                             alt="CSK" class="w-4 h-4 mr-2"> Kolkata Knight Riders
+                                    </span>
+                                    <span class="font-bold">₹119.95 Cr (99.95%)</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-purple-900 rounded-full" style="width: 99.95%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Team 5 -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="font-medium flex items-center">
+                                        <img src="LOGO/LSG logo.png" 
+                                             alt="MI" class="w-4 h-4 mr-2"> Lucknow Super Giants 
+                                    </span>
+                                    <span class="font-bold">₹119.90 Cr (99.91%)</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-blue-700 rounded-full" style="width: 99.91%"></div>
+                                </div>
+                            </div>
+                            <!--Team 6 -->
+                            <div>
+                                 <div class="flex justify-between text-sm mb-2">
+                                      <span class="font-medium flex items-center">
+                                                 <img src="LOGO/MI Logo.png" 
+                                               alt="MI" class="w-4 h-4 mr-2"> Mumbai Indians
+                                     </span>
+                                                  <span class="font-bold">₹119.80Cr (99.83%)</span>
+                                      </div>
+                                 <div class="h-2 bg-gray-200 rounded-full">
+                               <div class="h-2 bg-blue-900 rounded-full" style="width: 99.83%"></div>
+                                   </div>
+                                 </div>
+<!--Team 7-->
+ <div>
+      <div class="flex justify-between text-sm mb-2">
+           <span class="font-medium flex items-center">
+                      <img src="LOGO/Punjab Kings.jpeg" 
+                    alt="MI" class="w-4 h-4 mr-2"> Punjab Kings
+          </span>
+                       <span class="font-bold">₹119.65Cr (99.70%)</span>
+           </div>
+      <div class="h-2 bg-gray-200 rounded-full">
+    <div class="h-2 bg-red-500 rounded-full" style="width: 99.70%"></div>
+        </div>
+      </div>
+<!--Team 8-->
+ <div>
+      <div class="flex justify-between text-sm mb-2">
+           <span class="font-medium flex items-center">
+                      <img src="LOGO/RR logo.png" 
+                    alt="MI" class="w-4 h-4 mr-2"> Rajasthan Royals
+          </span>
+                       <span class="font-bold">₹119.70Cr (99.75%)</span>
+           </div>
+      <div class="h-2 bg-gray-200 rounded-full">
+    <div class="h-2 bg-pink-500 rounded-full" style="width: 99.75%"></div>
+        </div>
+      </div>
+<!--Team 9-->
+ <div>
+      <div class="flex justify-between text-sm mb-2">
+           <span class="font-medium flex items-center">
+                      <img src="LOGO/RCB logo.jpeg" 
+                    alt="MI" class="w-4 h-4 mr-2"> Royal Challengers Bangaluru
+          </span>
+                       <span class="font-bold">₹119.25Cr (99.37%)</span>
+           </div>
+      <div class="h-2 bg-gray-200 rounded-full">
+    <div class="h-2 bg-red-700 rounded-full" style="width: 99.37%"></div>
+        </div>
+      </div>
+<!--Team 10-->
+ <div>
+      <div class="flex justify-between text-sm mb-2">
+           <span class="font-medium flex items-center">
+                      <img src="LOGo/SRH logo.jpeg" 
+                    alt="MI" class="w-4 h-4 mr-2"> Sunrisers Hyderabad
+          </span>
+                       <span class="font-bold">₹119.80Cr (99.83%)</span>
+           </div>
+      <div class="h-2 bg-gray-200 rounded-full">
+    <div class="h-2 bg-orange-500 rounded-full" style="width: 99.83%"></div>
+        </div>
+      </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Top Transactions -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Top Buys -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="bg-gray-100 p-4 border-b border-gray-200">
+                            <h3 class="font-bold text-lg flex items-center">
+                                <i class="fas fa-arrow-up text-green-500 mr-2"></i> Top 5 Buys
+                            </h3>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-3">
+                                <!-- Player 1 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/virat kohli.jpeg" 
+                                         alt="Virat" class="w-10 h-10 rounded-full border-2 border-yellow-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Virat Kohli</p>
+                                        <p class="text-xs text-gray-600">Royal Challengers</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹16.25 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹2.00 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 2 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/Suryakumar.jpeg" 
+                                         alt="Surya" class="w-10 h-10 rounded-full border-2 border-red-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Suryakumar Yadav</p>
+                                        <p class="text-xs text-gray-600">Mumbai Indians</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹14.75 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.20 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 3 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/jasprit Bhumra.jpeg" 
+                                         alt="Bumrah" class="w-10 h-10 rounded-full border-2 border-blue-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Jasprit Bumrah</p>
+                                        <p class="text-xs text-gray-600">Chennai Super Kings</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹13.50 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.75 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 4 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/hardik pandya.jpeg" 
+                                         alt="Hardik" class="w-10 h-10 rounded-full border-2 border-green-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Hardik Pandya</p>
+                                        <p class="text-xs text-gray-600">Gujarat Titans</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹12.00 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.50 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 5 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/rohit sharma.jpeg" 
+                                         alt="Rohit" class="w-10 h-10 rounded-full border-2 border-red-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Rohit Sharma</p>
+                                        <p class="text-xs text-gray-600">Mumbai Indians</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹11.25 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.50 Cr</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bargain Buys -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="bg-gray-100 p-4 border-b border-gray-200">
+                            <h3 class="font-bold text-lg flex items-center">
+                                <i class="fas fa-thumbs-up text-blue-500 mr-2"></i> Top Bargains
+                            </h3>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-3">
+                                <!-- Player 1 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/Rishabh Pant.jpeg" 
+                                         alt="Pant" class="w-10 h-10 rounded-full border-2 border-yellow-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Rishabh Pant</p>
+                                        <p class="text-xs text-gray-600">Lucknow Super Giants</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹2.80 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.80 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 2 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/ravindra jadeja.jpeg" 
+                                         alt="Jadeja" class="w-10 h-10 rounded-full border-2 border-green-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Ravindra Jadeja</p>
+                                        <p class="text-xs text-gray-600">Chennai Super Kings</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹2.50 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.25 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 3 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/md shami.jpeg" 
+                                         alt="Shami" class="w-10 h-10 rounded-full border-2 border-blue-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Mohammed Shami</p>
+                                        <p class="text-xs text-gray-600">Sunrisers Hyderabad</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹2.25 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.00 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 4 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/Suryakumar.jpeg" 
+                                         alt="SKY" class="w-10 h-10 rounded-full border-2 border-red-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">Shardul Thakur</p>
+                                        <p class="text-xs text-gray-600">Rajasthan Royals</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹2.00 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹0.75 Cr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Player 5 -->
+                                <div class="flex items-center p-2 hover:bg-gray-50 rounded-lg">
+                                    <img src="Auction Photo/KL rahul.jpeg" 
+                                         alt="Rahul" class="w-10 h-10 rounded-full border-2 border-yellow-500 object-cover mr-3">
+                                    <div class="flex-1">
+                                        <p class="font-bold">KL Rahul</p>
+                                        <p class="text-xs text-gray-600">Delhi Capitals</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-green-600">₹1.90 Cr</p>
+                                        <p class="text-xs text-gray-600">Base: ₹1.00 Cr</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold">Login to IPL Auction</h3>
+                        <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="••••••••">
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember" class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                            <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-bold">
+                            Login
+                        </button>
+                    </form>
+                    
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-gray-600">Don't have an account? 
+                            <a href="#" class="text-purple-600 hover:text-purple-800 font-medium">Sign up</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="script.js"></script> 
+</body>
+</html>

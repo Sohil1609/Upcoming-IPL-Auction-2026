@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+:root {
+    --mi-blue: #005baa;
+    --csk-yellow: #ffff3c;
+    --rcb-red: #ec1c24;
+    --kkr-purple: #3a225d;
+    --dc-blue: #004c93;
+    --srh-orange: #fb643e;
+    --rr-pink: #ff6e8d;
+    --pbks-red: #aa4545;
+    --lsg-blue: #46c7f3;
+    --gt-green: #04a1b9;
+    --ah-blue: #1a4b8c;
+    --kl-red: #d62828;
+}
+        
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+}
+        
+.page {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+        
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+        
+.page.active {
+    display: block;
+}
+        
+.nav-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+        
+.nav-link.active {
+    font-weight: 600;
+}
+        
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px;
+}
+        
+.team-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid;
+}
+        
+.player-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+        
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+        
+.bid-btn {
+    transition: all 0.2s ease;
+}
+        
+.bid-btn:hover {
+    transform: scale(1.05);
+}
+        
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+        
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+        
+.timer-flash {
+    animation: flash 1s infinite;
+}
+        
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+        
+.sold-tag {
+    transform: rotate(-15deg);
+    right: -20px;
+    top: 10px;
+}
+        
+.batsman { border-color: #ef4444; background-color: #fef2f2; }
+.bowler { border-color: #3b82f6; background-color: #eff6ff; }
+.all-rounder { border-color: #10b981; background-color: #ecfdf5; }
+.wicket-keeper { border-color: #f59e0b; background-color: #fffbeb; }
+        
+.team-bg-mi { background: linear-gradient(135deg, var(--mi-blue) 0%, #004d88 100%); }
+.team-bg-csk { background: linear-gradient(135deg, var(--csk-yellow) 0%, #f7db00 100%); color: #000; }
+.team-bg-rcb { background: linear-gradient(135deg, var(--rcb-red) 0%, #cc0c13 100%); }
+.team-bg-kkr { background: linear-gradient(135deg, var(--kkr-purple) 0%, #2b1a4a 100%); }
+.team-bg-dc { background: linear-gradient(135deg, var(--dc-blue) 0%, #003a6f 100%); }
+.team-bg-srh { background: linear-gradient(135deg, var(--srh-orange) 0%, #f84313 100%); }
+.team-bg-rr { background: linear-gradient(135deg, var(--rr-pink) 0%, #ff4d6d 100%); }
+.team-bg-pbks { background: linear-gradient(135deg, var(--pbks-red) 0%, #8a3636 100%); }
+.team-bg-lsg { background: linear-gradient(135deg, var(--lsg-blue) 0%, #0099cc 100%); }
+.team-bg-gt { background: linear-gradient(135deg, var(--gt-green) 0%, #037888 100%); }
+.team-bg-ah { background: linear-gradient(135deg, var(--ah-blue) 0%, #0d3a6b 100%); }
+.team-bg-kl { background: linear-gradient(135deg, var(--kl-red) 0%, #a51c1c 100%); }
+        
+.scrollable-section {
+    max-height: 500px;
+    overflow-y: auto;
+}
+        
+.scrollable-section::-webkit-scrollbar {
+    width: 6px;
+}
+        
+.scrollable-section::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 3px;
+}
+        
+.player-pool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+        
+.team-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+        
+.bid-history-item {
+    transition: all 0.2s ease;
+}
+        
+.bid-history-item:hover {
+    background-color: #f1f5f9;
+}
+        
+.new-team-badge {
+    animation: bounce 2s infinite;
+}
+        
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+        
+.stats-card {
+    transition: all 0.3s ease;
+}
+        
+.stats-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+        
+.mobile-nav {
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+        
+.filter-chip {
+    transition: all 0.2s ease;
+}
+        
+.filter-chip.active {
+    background-color: #3b82f6;
+    color: white;
+}
+        
+.player-image {
+    transition: transform 0.3s ease;
+}
+        
+.player-image:hover {
+    transform: scale(1.05);
+}
+        
+.team-detail-header {
+    min-height: 200px;
+}
+        
+.hammer-animation {
+    animation: hammer 1s infinite alternate;
+}
+        
+@keyframes hammer {
+    0% { transform: rotate(-15deg); }
+    100% { transform: rotate(15deg); }
+}
+        
+.progress-bar {
+    transition: width 1s ease;
+}
